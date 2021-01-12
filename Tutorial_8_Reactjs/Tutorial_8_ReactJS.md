@@ -27,6 +27,8 @@ es una de las principales características de React. De momento, en líneas gene
 
 El Virtual DOM se basa en una idea bastante sencilla e ingeniosa. Básicamente hace que, cuando se actualiza una vista, React se encargue de actualizar el DOM Virtual, que es mucho más rápido que actualizar el DOM del navegador (DOM real). Cuando React compara el DOM Virtual con el DOM del navegador sabe perfectamente qué partes de la página debe actualizar y se ahorra la necesidad de actualizar la vista entera.
 
+**Nota:** **DOM** son las siglas de 'Document Object Model'. En términos simples, es una representación estructurada de los elementos HTML que están presentes en una página web o aplicación web. Contiene un nodo para cada elemento HTML presente en el documento web.
+
 ## Herramientas relacionadas:
 
 - React Native : variacion de react para crear aplicaciones moviles nativas
@@ -92,20 +94,20 @@ ahora vamos a echar un vistazo de los archivos que nos genero react al momento d
 
 ![enter image description here](https://i.postimg.cc/rz2zyrzR/7.png)
 
-**README.md** : Básicamente es una nota que le dejamos a otros desarrolladores para que se enteren de que se trata nuestro proyecto. Podríamos poner el nombre de nuestro proyecto, algunos comandos útiles, etc.
-**package.json** : Archivo que describe nuestro proyecto, podríamos ver el nombre de nuestro proyecto, la versión, las dependencias, etc. Ademas tendremos una seccion de **Scripts** en donde se encuentran los comandos que podríamos ejecutar en consola como start, build, test, eject.
-**package-lock.json**: Archivo de uso interno de react
-**.gitignore**: Archivo que sirve para ignorar archivos y/o carpetas al momento de subir nuestro proyecto a repositorios como git.
+ - **README.md** : Básicamente es una nota que le dejamos a otros desarrolladores para que se enteren de que se trata nuestro proyecto. Podríamos poner el nombre de nuestro proyecto, algunos comandos útiles, etc.
+- **package.json** : Archivo que describe nuestro proyecto, podríamos ver el nombre de nuestro proyecto, la versión, las dependencias, etc. Ademas tendremos una seccion de **Scripts** en donde se encuentran los comandos que podríamos ejecutar en consola como start, build, test, eject.
+- **package-lock.json**: Archivo de uso interno de react
+- **.gitignore**: Archivo que sirve para ignorar archivos y/o carpetas al momento de subir nuestro proyecto a repositorios como git.
 **./src**: Contiene el código de react (aquí se encuentra nuestra aplicación)
-	**App.js**: Contiene codigo JSX. En este archivo tenemos una funcion **APP** que retorna una etiqueta `<div>` donde tenemos lo que queremos imprimir en pantalla (se importa en **index.js** con `import App from  './App';` y se renderiza con `ReactDOM.render()`)
-	**index.js**: Archivo encargado de arrancar la aplicacion de React
-**./public**: Contiene el archivo que nos permitirá montar la aplicación de react el cual es el archivo **index.html**
+	- **App.js**: Contiene codigo JSX. En este archivo tenemos una funcion **APP** que retorna una etiqueta `<div>` donde tenemos lo que queremos imprimir en pantalla (se importa en **index.js** con `import App from  './App';` y se renderiza con `ReactDOM.render()`)
+	- **index.js**: Archivo encargado de arrancar la aplicacion de React
+- **./public**: Contiene el archivo que nos permitirá montar la aplicación de react el cual es el archivo **index.html**
 	
 
 # 3. Conceptos basicos
 ## 3.1  Hello world en React
 
-Si bien el ejemplo que nos crea react es muy boniyo, lo mejor para entender react es empezar por el más pequeño de los ejemplos de React, el cual se ve así:
+Si bien el ejemplo que nos crea react es muy bonito, lo mejor para entender react es empezar por el más pequeño de los ejemplos, un Hello, world, el cual se ve así:
 
 ```
 ReactDOM.render(
@@ -115,6 +117,14 @@ ReactDOM.render(
 ```
 para esto nos dirigimos al archivo **index.js** y modificamos el metodo **ReactDOM**
 Este muestra un encabezado con el texto “Hello, world!” en la página.
+
+El paquete  `react-dom`  proporciona métodos específicos del DOM que pueden ser utilizados en el nivel más alto de tu aplicación como una vía de escape del modelo de React si así lo necesitas. La mayoría de tus componentes no deberían necesitar usar este módulo.
+
+-   [`render()`](https://es.reactjs.org/docs/react-dom.html#render)
+-   [`hydrate()`](https://es.reactjs.org/docs/react-dom.html#hydrate)
+-   [`unmountComponentAtNode()`](https://es.reactjs.org/docs/react-dom.html#unmountcomponentatnode)
+-   [`findDOMNode()`](https://es.reactjs.org/docs/react-dom.html#finddomnode)
+-   [`createPortal()`](https://es.reactjs.org/docs/react-dom.html#createportal)
 
 ## 3.2 JSX
 
@@ -129,7 +139,8 @@ Se llama JSX, y es una extensión de la sintaxis de JavaScript. JSX puede record
 En el ejemplo a continuación, declaramos una variable llamada `name` y luego la usamos dentro del JSX envolviéndola dentro de llaves:
 
 ```
-const name = 'Josh Perez';const element = <h1>Hello, {name}</h1>;
+const name = 'Josh Perez';
+const element = <h1>Hello, {name}</h1>;
 ReactDOM.render(
   element,
   document.getElementById('root')
@@ -151,7 +162,8 @@ const user = {
 
 const element = (
   <h1>
-    Hello, {formatName(user)}!  </h1>
+    Hello, {formatName(user)}!  
+  </h1>
 );
 
 ReactDOM.render(
@@ -268,6 +280,8 @@ function Welcome(props) {
 
 Esta función es un componente de React válido porque acepta un solo argumento de objeto “props” (que proviene de propiedades) y devuelve un elemento de React. Llamamos a dichos componentes “funcionales” porque literalmente son funciones JavaScript.
 
+**Otra manera de definir componentes:**
+
 También puedes utilizar una [clase de ES6](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes) para definir un componente:
 
 ```
@@ -287,7 +301,7 @@ Al momento de crear nuestro Proyecto React crea un componente **APP** la cual es
 la cual genera la pantalla inicial que se muestra al iniciar nuestro proyecto:
 
 ![enter image description here](https://i.postimg.cc/tJYFnWXr/6.png)
-para comenzar a trabajar con nuestra propia aplicacion eliminaremos todo esto y solo retornaremos una etiqeta `<div>Hello world</div>
+para comenzar a trabajar con nuestra propia aplicacion eliminaremos todo esto y solo retornaremos una etiqeta `<div>Hello world</div>`
 esto generara una pagina en blanco con un encabezaso "Hello world"
 
 ### 3.4.2 Composición de componentes
@@ -321,7 +335,7 @@ Salida en el navegador:
 #### Si te diste cuenta a la vez creamos nuestro primer componente "Hello_world"
 y si ahora quiero estilizar un poco mi etiqueta hello world?
 
-## 4. Practicando
+
 
 para estilizar nuestro hello world vamos  vamos a colocarle un **id** para poder identificarlo
 
@@ -417,9 +431,10 @@ Salida en el navegador:
 ![enter image description here](https://i.postimg.cc/G2Bpz362/11.png)
 con esto tenemos 3 componentes, cada uno con sus datos, y como se dijo anteriormente puede pasarse cuantas propiedades necesite, así es como le podemos pasar datos a un solo componente para que luzca de manera distinta a los otros, de esta manera cada componente tiene distintas propiedades. 
 
-##  5. State
-el estado de componente, anteriormente creamos un componente que recibe propiedades, las cuales son datos que le pasamos de afuera hacia dentro del componente, pero que pasa si un componente ya tiene datos internamente, los cuales podemos cambiar, a estos datos internos se le conocen como **estados**
-lo primero que vamos a hacer es convertir una funcion en una clase
+##  4. State
+el estado de componente, anteriormente creamos un componente que recibe propiedades, las cuales son datos que le pasamos de afuera hacia dentro del componente, pero que pasa si un componente ya tiene **datos internamente, los cuales podemos cambiar, a estos datos internos se le conocen como estados**
+
+**Lo primero que vamos a hacer es convertir una funcion en una clase**
 
 ## Convertir una función en una clase
 
@@ -461,7 +476,7 @@ class  Hello_world  extends  React.Component{
 
 ahora podemos eliminar o comentar nuestra funcion y comprobar que la clase nos retorna lo mismo en pantalla
 
-Ahora dentro de esta clase podemos crear una propiedad llamada **State** la cual es un objeto. Este objeto almacenara datos del componente, vamos a crear una propiedad **show** para mostrar u ocular el componente. Ahora mediante este valor el componente puede hacer algo, por ejemplo, vamos a colocar un condicional,  **si** show es  **true** retornamos las propiedades, de lo contrario retornamos una etiqueta `<h1>` indicando que no hay elementos
+Ahora dentro de esta clase podemos crear una propiedad llamada **State** la cual **es un objeto.** Este objeto almacenara datos del componente, vamos a crear una propiedad **show** para mostrar u ocular el componente. Ahora mediante este valor el componente puede hacer algo, por ejemplo, vamos a colocar un condicional,  **si** show es  **true** retornamos las propiedades, de lo contrario retornamos una etiqueta `<h1>` indicando que no hay elementos
 
 ```
 class  Hello_world  extends  React.Component{
