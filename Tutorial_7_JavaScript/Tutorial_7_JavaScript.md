@@ -39,7 +39,7 @@ salida de la consola:
 
 
 ###  ¿ Y si no queremos imprimir en consola sino alterar la pagina?
-para esto hay que indicarle que queremos imprimir o modificar el documento, con **document** indicar que escribiremos **write** y pasar el texto que queremos imprimir en la pagina.
+para esto hay que indicarle que queremos imprimir o modificar el documento, con **document** indicar que escribiremos **(write)** y pasar el texto que queremos imprimir en la pagina.
 
 en consola escribimos:
 
@@ -95,7 +95,7 @@ LISTO! solo queda  abrir el archivo **index.html** el cual se abrira en el naveg
 
 ### ¿Y por que hacer esto con Javascript y no directamente con una etiqueta h1 de html?
 
-la razon es que el poder crear elementos con Javascript es mucho mas rapido que crearlos con HTML, sin embargo esto no es algo practico para crear sitios web sino aplicaciones web. Todo esto se hace mediante Frameworks y bibliotecas. sin embargo este es tema de otro tutorial
+la razon es que el poder crear elementos con Javascript es mucho mas rapido que crearlos con HTML, sin embargo esto no es algo practico para crear sitios web sino aplicaciones web. Todo esto se hace mediante Frameworks y bibliotecas.
 
 ## 4. Bases de Javascript
 
@@ -108,9 +108,8 @@ En el primer ejemplo aprendimos a como imprimir en consola un mensaje, pero se p
 
 salida: 
 ![](https://eastus21-mediap.svc.ms/transform/thumbnail?provider=spo&inputFormat=png&cs=fFNQTw&docid=https://alumnosuach-my.sharepoint.com:443/_api/v2.0/drives/b!u0G9EjOvaUOvf0gaUBN8XgLk2IIazSlDivgBTZk5tG_SJnS3r0klSJGrQTgQR4Tw/items/01TGJB7WNESYDVLKT7K5HLF6IAKG7MACA6?version=Published&encodeFailures=1&ctag=%22c:%7B550796A4-7FAA-4E57-B2F9-0051BEC0081E%7D,1%22&srcWidth=&srcHeight=&width=1848&height=910&action=Access)
-Asi es como podriamos indicar con un error personalizado que nuestra aplicacion ha fallado
-
-Sin embargo no solamente podemos ver **errores**, sino que tambien podriamos **medir el tiempo** que se demora una aplicacion, **mostrar tabla de datos** que podriamos tener en neustra aplicacion, etc.
+Asi es como podriamos indicar con un error que nuestra aplicacion ha fallado
+Ademas podriamos **medir el tiempo** que se demora una aplicacion, **mostrar tabla de datos** que podriamos tener en neustra aplicacion, etc.
 
 
 Para mas informacion sobre **Metodos** en el objeto **console** click [aqui](https://developer.mozilla.org/es/docs/Web/API/Console)
@@ -120,47 +119,35 @@ Para mas informacion sobre **Metodos** en el objeto **console** click [aqui](htt
 
 ## 4.2 Tipos de datos
 
-Al igual que cualquier lenguaje de programacion existen tipos de datos, en Javascript algunos de los tipos de datos que tenemos son:
-## [Tipado dinámico]
+## Tipado dinámico
 
-JavaScript es un lenguaje _débilmente tipado_ y _dinámico_. Las variables en JavaScript no están asociadas directamente con ningún tipo de valor en particular, y a cualquier variable se le puede asignar (y reasignar) valores de todos los tipos:
+como ya dijimos **JavaScript** es un lenguaje **débilmente tipado y  dinámico,** es decir, las variables no tienen un tipo específico, y a cualquier variable se le puede asignar (y reasignar) valores de todos los tipos:
 ```
 let foo = 42;    // foo ahora es un número
 foo     = 'bar'; // foo ahora es un string
 foo     = true;  // foo ahora es un booleano
 
 ```
- ## [Valores primitivos]
+Una de las principales herramientas en lenguajes con tipado dinámico es **comprobar el tipo de datos** con el que nos estamos enfrentando. Para ello existen diferentes aproximaciones o estrategias para comprobación de tipos. Todas ellas tienen ventajas e inconvenientes.
 
-Todos los tipos, excepto los objetos, definen valores inmutables (es decir, valores que no se pueden cambiar). Por ejemplo (y a diferencia de C), las cadenas son inmutables. Nos referimos a los valores de estos tipos como "_valores primitivos_".
-### [Tipo Boolean]
+para mas informacion: https://www.todojs.com/tipos-datos-javascript-es6/#:~:text=Javascript%20tiene%20seis%20tipos%20primitivos,)%2C%20S%C3%ADmbolo%20(%20symbol%20).
 
-`Boolean` representa una entidad lógica y puede tener dos valores: `true` y `false`. Consulta [Boolean](https://developer.mozilla.org/es/docs/Glossary/Boolean) y [`Boolean`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean) para obtener más detalles.
+**En Javascript disponemos de los siguientes tipos de datos:**
+![enter image description here](https://i.postimg.cc/3JjsqSjs/134.png)
+Para empezar, nos centraremos en los tres primeros, denominados  **tipos de datos primitivos**
 
-### [Tipo Null]
 
-El tipo `Null` tiene exactamente un valor: `null`. Consulta [`null`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/null) y [Null](https://developer.mozilla.org/es/docs/Glossary/Null) para obtener más detalles.
-
-### [Tipo Undefined]
-
-Una variable a la que no se le ha asignado un valor tiene el valor `undefined`. Consulta [`undefined`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined) y [Undefined](https://developer.mozilla.org/es/docs/Glossary/undefined) para obtener más detalles.
-
-### [Tipo Number]
+ ## Valores primitivos
+ Para empezar, nos centraremos en los tres primeros, denominados **tipos de datos primitivos**,
+###  - Tipo Number
 
 ECMAScript tiene dos tipos numéricos integrados: **`Number`** y **`BigInt`** (ve más abajo).
 
 El tipo `Number` es un [valor en formato binario de 64 bits de doble precisión IEEE 754](https://es.wikipedia.org/wiki/Formato_en_coma_flotante_de_doble_precisión) (números entre -(253 - 1) y 253 - 1). Además de representar números de punto flotante, el tipo `Number` tiene tres valores simbólicos: `+Infinity`, `-Infinity` y [`NaN`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/NaN) ("**N**ot a **N**umber" o No es un número).
 
-
-### [Tipo BigInt]
-
-El tipo [`BigInt`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/BigInt) es un primitivo numérico en JavaScript que puede representar números enteros con precisión arbitraria. Con `BigInt`s, puedes almacenar y operar de forma segura en números enteros grandes incluso más allá del límite seguro de enteros para `Number`s.
-
-Un `BigInt` se crea agregando `n` al final de un número entero o llamando al constructor.
-
 ### [Tipo String]
 
-El tipo [`String`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String) de JavaScript se utiliza para representar datos textuales. Es un conjunto de "elementos" de valores enteros sin signo de 16 bits. Cada elemento del `String` ocupa una posición en la cadena. El primer elemento está en el índice `0`, el siguiente en el índice `1`, y así sucesivamente. La longitud de una cadena es el número de elementos que contiene.
+El tipo [`String`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String) de JavaScript se utiliza para representar datos textuales. Es un conjunto de "elementos". Cada elemento del `String` ocupa una posición en la cadena. El primer elemento está en el índice `0`, el siguiente en el índice `1`, y así sucesivamente. La longitud de una cadena es el número de elementos que contiene.
 
 A diferencia de algunos lenguajes de programación (tal como C), las cadenas de JavaScript son inmutables. Esto significa que una vez que se crea una cadena, no es posible modificarla.
 
@@ -169,16 +156,33 @@ Sin embargo, todavía es posible crear otra cadena basada en una operación en l
 -   Una subcadena de la original seleccionando letras individuales o usando [`String.substr()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr).
 -   Una concatenación de dos cadenas usando el operador de concatenación (`+`) o [`String.concat()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/concat).
 
+### [Tipo Boolean]
+
+`Boolean` representa una entidad lógica y puede tener dos valores: `true` y `false`. Consulta [Boolean](https://developer.mozilla.org/es/docs/Glossary/Boolean) y [`Boolean`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Boolean) para obtener más detalles.
 
 
-### [Tipo Symbol]
-
-Un símbolo es un valor primitivo **único** e **inmutable** y se puede utilizar como clave de una propiedad de objeto (ve más abajo). En algunos lenguajes de programación, los símbolos se denominan "átomos".
-
-Para obtener más detalles, consulta [Symbol](https://developer.mozilla.org/es/docs/Glossary/Symbol) y el contenedor de objetos [`Symbol`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Symbol) en JavaScript.
 
 
-### [Object]
+
+Para saber que tipo de dato tiene una variable, debemos observar que valor le hemos dado. Si es un valor numérico, será de tipo **number**. Si es un valor de texto, será de tipo **string**, si es verdadero o falso, será de tipo **booleano**. Veamos un ejemplo en el que identificaremos que tipo de dato tiene cada variable:
+![enter image description here](https://i.postimg.cc/rs9KzGWK/78787.png)
+## ¿Que tipo de dato tiene una variable?
+Nos encontraremos que muchas veces no resulta tan sencillo saber que tipo de dato tiene una variable, o simplemente viene oculto porque el valor lo devuelve una función o alguna otra razón similar. Hay varias formas de saber que tipo de dato tiene una variable en Javascript:
+
+### Utilizando typeof()
+Si tenemos dudas, podemos utilizar la función `typeof`, que nos devuelve el tipo de dato de la variable que le pasemos por parámetro.
+![enter image description here](https://i.postimg.cc/wvM13R2V/asdfasdfasdf.png)
+
+
+
+
+### - Tipo Undefined
+
+Una variable a la que no se le ha asignado un valor tiene el valor `undefined`. Consulta [`undefined`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/undefined) y [Undefined](https://developer.mozilla.org/es/docs/Glossary/undefined) para obtener más detalles.
+
+
+
+### - Object
 Un objeto de JavaScript tiene propiedades asociadas a él. Una propiedad de un objeto se puede explicar como una variable adjunta al objeto. Las propiedades de un objeto básicamente son lo mismo que las variables comunes de JavaScript, excepto por el nexo con el objeto
 
 Las propiedades de un objeto definen las características del objeto. Accedes a las propiedades de un objeto con una simple notación de puntos:
@@ -633,3 +637,4 @@ al revisar la URL https://pokeapi.co/api/v2/ obtendremos un **objeto** y de este
 -   javaScript se ha convertido en una herramienta importante para el desarrollo web
 -   Es uno de los pilares (junto con HTML y CSS) del desarrolo de paginas y aplicaciones web
 -   Cuenta con una gran cantidad de frameworks para crear distintos tipos de aplicaciones web
+-  Es un lenguaje importante para poder aprender Varios frameworks y librerias web
